@@ -1,0 +1,17 @@
+.movie_card {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 250px;
+  border: 2px solid brown;
+}
+.movie_card img {
+  height: 50%;
+  width: 100%;
+}
+.btnWrapper {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
