@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Movies List</h1>
+      <h1 style={{color:"red"}}>Movies List</h1>
       <p>Welcome to our website!</p>
       <MoviesList data={moviesData} />
     </div>
