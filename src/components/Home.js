@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import MoviesList from "./MoviesList/MoviesList";
+import { useDispatch,useSelector } from "react-redux";
+import { updateText,updateNumber } from "../store/actions/textActions";
+
 
 export default function Home() {
+  const dispatch = useDispatch();
+  const text = useSelector((state)=>state.text.text);
+  const number = useSelector((state)=>state.text.number);
   const [moviesData, setMoviesData] = useState([]);
   useEffect(() => {
     // Call the function to fetch popular movies
@@ -28,10 +34,15 @@ export default function Home() {
     }
   }
 
+  
+console.log(text)
   return (
     <div>
+      <div>{number}</div>
+      <button onClick={()=>dispatch(updateNumber(5))}>Update Number</button>
       <h1 style={{color:"red"}}>Movies List</h1>
       <p>Welcome to our website!</p>
+      <div>{text}</div>
       <MoviesList data={moviesData} />
     </div>
   );
